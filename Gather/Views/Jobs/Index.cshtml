@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Gather.Models;
+@model IEnumerable<Gather.Models.Flavor>
+
+<h1>Flavors for @User.Identity.Name</h1>
+
+@if (Model.Any())
+{
+  @using (Html.BeginForm())
+  {
+    <p>
+        Find by name: @Html.TextBox("SearchString")  
+        <input type="submit" value="Search" />
+    </p>
+  }
+
+  
+    @foreach (Flavor flavor in Model)
+    {
+      <p>@Html.ActionLink($"{job.Name}", "Details", new { id = job.JobId })</p>
+    }
+  
+} 
+else
+{
+  <h3>No job have been added yet!</h3>
+}
+
+<p>@Html.ActionLink("Add new job", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

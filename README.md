@@ -1,4 +1,4 @@
-# Pierre's Sweet and Savory Treats
+# Gather.io
 
 Pierre wants to create a new application to market his sweet and savory treats. 
 So this web application is use to built with user authentication and a many-to-many relationship. Here are the some features of the application:
@@ -11,9 +11,12 @@ So this web application is use to built with user authentication and a many-to-m
 
 * This application has separate roles for admins and logged-in users. Only admins should be able to add, update and delete. There is an order form that only logged-in users can access. A logged-in user should be able to create, read, update and delete their own order.
 
-## Name of Author:
+## Name of Authors:
 
    _Smita_
+   _Dylan_
+   _DeAunt'e
+   _Carlos_
 
 ## Technologies used:
 
@@ -33,18 +36,21 @@ So this web application is use to built with user authentication and a many-to-m
 
 * Identity
 
+* Bootstrap
+
+* Razor View Engine
 
 
 ## Setup/Installation Requirements
 
-1. Download or clone the [https://github.com/smita-raj12/PierresTreats.Solution](https://github.com/smita-raj12/PierresTreats.Solution) to your local machine.
+1. Download or clone the [https://github.com/smita-raj12/Gather.Solution](https://github.com/smita-raj12/Gather.Solution) to your local machine.
 
 2. Download any Code Editor for your choice. (Here I used VSCode).
 
-3. Open git BASH terminal and navigate to the PierresTreats folder, within the directory
+3. Open git BASH terminal and navigate to the Gather folder, within the directory
 Run `dotnet restore` in the git BASH terminal to install dependencies. 
 
-4. Create appsettings.json file in the PierresTreats directory of PierresTreats.Solution (run the command touch appsettings.json) and add the following code to the file: appsettings.json
+4. Create appsettings.json file in the Gather directory of Gather.Solution (run the command touch appsettings.json) and add the following code to the file: appsettings.json
 
       
         {                                                    
@@ -68,9 +74,17 @@ None
 
 ## License information with a copyright and date:
 
- [MIT](https://opensource.org/licenses/MIT)
+MIT License
+
+Copyright (c) 2021 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contact information:
    
-* EmailId: smita.raj12@gmail.com
+* Email: smita.raj12@gmail.com, {Dylan EMAIL}, {DeAunt'e EMAIL}, webquiza@gmail.com
 
