@@ -34,25 +34,25 @@ namespace Gather.Controllers
             return View(userJobs.ToList());
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         public ActionResult Create()
         {
-            ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+            ViewBag.SeekersId = new SelectList(_db.Seekers, "SeekerId", "Name");
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         [HttpPost]
-        public async Task<ActionResult> Create(Job Job, int TreatId)
+        public async Task<ActionResult> Create(Job Job, int SeekerId)
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
             Job.User = currentUser;
             _db.Jobs.Add (Job);
             _db.SaveChanges();
-            if (TreatId != 0)
+            if (SeekerId != 0)
             {
-                _db.TreatJob.Add(new TreatJob(){ TreatId = TreatId, JobId = Job.JobId });
+                _db.JobSeeker.Add(new JobSeeker(){ SeekerId = SeekerId, JobId = Job.JobId });
             }
             _db.SaveChanges();
             return RedirectToAction("Index");
@@ -63,60 +63,60 @@ namespace Gather.Controllers
         {
             var thisJob =_db.Jobs
                     .Include(Job => Job.JoinEntities)
-                    .ThenInclude(join => join.Treat)
+                    .ThenInclude(join => join.Seeker)
                     .FirstOrDefault(Job => Job.JobId == id);
             return View(thisJob);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         public ActionResult Edit(int id)
         {
             var thisJob = _db.Jobs.FirstOrDefault(Job => Job.JobId == id);
-            ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+            ViewBag.SeekerId = new SelectList(_db.Seekers, "SeekerId", "Name");
             return View(thisJob);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         [HttpPost]
-        public ActionResult Edit(Job Job, int TreatId)
+        public ActionResult Edit(Job Job, int SeekerId)
         {
-            if (TreatId != 0)
+            if (SeekerId != 0)
             {
-                _db.TreatJob.Add(new TreatJob(){ TreatId = TreatId, JobId = Job.JobId });
+                _db.JobSeeker.Add(new JobSeeker(){SeekerId = SeekerId, JobId = Job.JobId });
             }
             _db.Entry(Job).State = EntityState.Modified;
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Admin")]
-        public ActionResult AddTreat(int id)
+        [Authorize(Roles = "Job")]
+        public ActionResult AddSeekers(int id)
         {
             var thisJob = _db.Jobs.FirstOrDefault(Job => Job.JobId == id);
-            ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
+            ViewBag.SeekerId = new SelectList(_db.Seekers, "SeekerId", "Name");
             return View(thisJob);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         [HttpPost]
-        public ActionResult AddTreat(Job Job, int TreatId)
+        public ActionResult AddSeekers(Job Job, int SeekerId)
         {
-            if (TreatId != 0)
+            if (SeekerId != 0)
             {
-                _db .TreatJob.Add(new TreatJob() { TreatId = TreatId, JobId = Job.JobId });
+                _db.JobSeeker.Add(new JobSeeker() { SeekerId = SeekerId, JobId = Job.JobId });
             }
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         public ActionResult Delete(int id)
         {
             var thisJob = _db.Jobs.FirstOrDefault(Job => Job.JobId == id);
             return View(thisJob);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -126,12 +126,12 @@ namespace Gather.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Job")]
         [HttpPost]
-        public ActionResult DeleteTreat(int joinId)
+        public ActionResult DeleteSeekers(int joinId)
         {
-            var joinEntry = _db.TreatJob.FirstOrDefault(entry => entry.TreatJobId == joinId);
-            _db.TreatJob.Remove(joinEntry);
+            var joinEntry = _db.JobSeeker.FirstOrDefault(entry => entry.JobSeekerId == joinId);
+            _db.JobSeeker.Remove(joinEntry);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

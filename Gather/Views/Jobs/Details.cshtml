@@ -4,14 +4,14 @@
 
 @model Gather.Models.Job
 
-<h2>Flavor Details</h2>
+<h2>Job Details</h2>
 <hr />
 
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This Flavor does not contains any treats</p>
+  <p>This Job does not contains any details</p>
 }
 else
 {
@@ -19,18 +19,18 @@ else
   
   @foreach(var join in Model.JoinEntities)
   {
-    <p>@join.Treat.Name</p>
+    <p>@join.Seeker.Name</p>
     @using (Html.BeginForm("DeleteJob", "Job"))
     {
-      @Html.Hidden("joinId", @join.TreatFlavorId)
+      @Html.Hidden("joinId", @join.JobSeekerId)
       <input type="submit" value="Delete"/>
     }
   }
   
 }
 
-<p>@Html.ActionLink("Add a Treat", "AddTreat", new { id = Model.JobId })</p>
+<p>@Html.ActionLink("Add new Job", "AddJob", new { id = Model.JobId })</p>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Job", "Edit", new { id = Model.JobId })</p>
-<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.JobId })</p>
+<p>@Html.ActionLink("Delete Job", "Delete", new { id = Model.JobId })</p>

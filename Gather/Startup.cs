@@ -63,7 +63,7 @@ namespace Gather
       
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("Hello World!");
+        await context.Response.WriteAsync("OOPS! You do not have access to this page!");
       });
     }
   }

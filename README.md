@@ -55,7 +55,7 @@ Run `dotnet restore` in the git BASH terminal to install dependencies.
       
         {                                                    
          "ConnectionStrings":{                                                          
-            "DefaultConnection": "Server=localhost;Port=3306;database=pierres_treats;uid={YOUR-USER-NAME};pwd= {YOUR-PASSWORD};"                                        
+            "DefaultConnection": "Server=localhost;Port=3306;database=jobs_seekers;uid={YOUR-USER-NAME};pwd= {YOUR-PASSWORD};"                                        
           }                                                                                
         }                                                                               
 

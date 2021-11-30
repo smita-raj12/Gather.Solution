@@ -34,14 +34,14 @@ namespace Gather.Controllers
       return View(userSeekers.ToList());
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     public ActionResult Create()
     {
       ViewBag.JobId = new SelectList(_db.Jobs, "JobId", "Name");
       return View();
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     [HttpPost]
     public async Task<ActionResult> Create(Seeker Seeker, int JobId)
     {
@@ -68,7 +68,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     public ActionResult Edit(int id)
     {
       var thisSeeker = _db.Seekers.FirstOrDefault(Seeker => Seeker.SeekerId == id);
@@ -76,7 +76,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     [HttpPost]
     public ActionResult Edit(Seeker Seeker, int JobId)
     {
@@ -89,7 +89,7 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     public ActionResult AddJob(int id)
     {
       var thisSeeker = _db.Seekers.FirstOrDefault(Seeker => Seeker.SeekerId == id);
@@ -97,7 +97,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     [HttpPost]
     public ActionResult AddJob(Seeker Seeker, int JobId)
     {
@@ -109,14 +109,14 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     public ActionResult Delete(int id)
     {
       var thisSeeker = _db.Seekers.FirstOrDefault(Seeker => Seeker.SeekerId == id);
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
@@ -126,7 +126,7 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
     
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Job")]
     [HttpPost]
     public ActionResult DeleteJob(int joinId)
     {

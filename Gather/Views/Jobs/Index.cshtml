@@ -3,9 +3,9 @@
 }
 
 @using Gather.Models;
-@model IEnumerable<Gather.Models.Flavor>
+@model IEnumerable<Gather.Models.Job>
 
-<h1>Flavors for @User.Identity.Name</h1>
+<h1>Jobs for @User.Identity.Name</h1>
 
 @if (Model.Any())
 {
@@ -18,7 +18,7 @@
   }
 
   
-    @foreach (Flavor flavor in Model)
+    @foreach (Job job in Model)
     {
       <p>@Html.ActionLink($"{job.Name}", "Details", new { id = job.JobId })</p>
     }

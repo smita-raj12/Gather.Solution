@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Gather.Models.Seeker
+
+<h2>Seekers Details</h2>
+<hr />
+
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This seeker does not contains any Jobs</p>
+}
+else
+{
+  <h4>Jobs for this Seekers:</h4>
+
+  @foreach(var join in Model.JoinEntities)
+  {
+    <p>@join.Job.Name</p>
+    @using (Html.BeginForm("DeleteJob", "Seekers"))
+    {
+      @Html.Hidden("joinId", @join.JobSeekerId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  
+}
+
+<p>@Html.ActionLink("Add a job", "AddJob", new { id = Model.SeekerId })</p>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Seeker", "Edit", new { id = Model.SeekerId })</p>
+<p>@Html.ActionLink("Delete Seeker", "Delete", new { id = Model.SeekerId })</p>

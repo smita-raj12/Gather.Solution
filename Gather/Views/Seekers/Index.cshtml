@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Gather.Models;
+@model IEnumerable<Gather.Models.Seeker>
+
+<h1>Seekers for @User.Identity.Name</h1>
+
+@if (Model.Any())
+{
+  @using (Html.BeginForm())
+  {
+    <p>
+        Find by name: @Html.TextBox("SearchString")  
+        <input type="submit" value="Search" />
+    </p>
+  }
+
+    @foreach (Seeker seeker in Model)
+    {
+      <p>@Html.ActionLink($"{seeker.Name}", "Details", new { id = seeker.SeekerId })</p>
+    }
+} 
+else
+{
+  <h3>No seekers have been added yet!</h3>
+}
+
+
+<p>@Html.ActionLink("Add new seeker", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
