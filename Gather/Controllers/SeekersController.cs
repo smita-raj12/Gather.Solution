@@ -34,14 +34,14 @@ namespace Gather.Controllers
       return View(userSeekers.ToList());
     }
 
-    [Authorize(Roles = "Job")]
+    [Authorize(Roles = "Seeker")]
     public ActionResult Create()
     {
       ViewBag.JobId = new SelectList(_db.Jobs, "JobId", "Name");
       return View();
     }
 
-    [Authorize(Roles = "Job")]
+    [Authorize(Roles = "Seeker")]
     [HttpPost]
     public async Task<ActionResult> Create(Seeker Seeker, int JobId)
     {
@@ -58,7 +58,7 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
 
-    [AllowAnonymous]
+    [Authorize(Roles = "Job")]
     public ActionResult Details(int id)
     {
       var thisSeeker = _db.Seekers
@@ -68,7 +68,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Job")]
+    [Authorize(Roles = "Seeker")]
     public ActionResult Edit(int id)
     {
       var thisSeeker = _db.Seekers.FirstOrDefault(Seeker => Seeker.SeekerId == id);
@@ -76,7 +76,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Job")]
+    [Authorize(Roles = "Seeker")]
     [HttpPost]
     public ActionResult Edit(Seeker Seeker, int JobId)
     {
@@ -97,18 +97,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Job")]
-    [HttpPost]
-    public ActionResult AddJob(Seeker Seeker, int JobId)
-    {
-      if (JobId != 0)
-      {
-        _db.JobSeeker.Add(new JobSeeker(){ JobId = JobId, SeekerId = Seeker.SeekerId });
-      }
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
-
+    
     [Authorize(Roles = "Job")]
     public ActionResult Delete(int id)
     {
@@ -126,14 +115,5 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
     
-    [Authorize(Roles = "Job")]
-    [HttpPost]
-    public ActionResult DeleteJob(int joinId)
-    {
-      var joinEntry = _db.JobSeeker.FirstOrDefault(entry => entry.JobSeekerId == joinId);
-      _db.JobSeeker.Remove (joinEntry);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }  
   }
 }    
