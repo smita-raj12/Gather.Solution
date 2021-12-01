@@ -16,7 +16,7 @@ namespace Gather.Models
 
     public int PhoneNumber { get; set; }
 
-    public DateTime Birthday { get; set; }
+    public DateTime Birthdate { get; set; }
 
     public string Education { get; set; }
 
@@ -24,7 +24,7 @@ namespace Gather.Models
 
     public string GitHubLink { get; set; }
     public string LinkedLink { get; set; }
-
+    public string AboutMe { get; set; }
     public virtual ApplicationUser User { get; set; }
     public virtual ICollection<JobSeeker> JoinEntities { get; set; }
   }

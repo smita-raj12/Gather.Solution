@@ -8,6 +8,14 @@
 <hr />
 
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</h3>
+<h3>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</h3>
+<h3>@Html.DisplayNameFor(model => model.Birthdate): @Html.DisplayFor(model => model.Birthdate)</h3>
+<h3>@Html.DisplayNameFor(model => model.Education): @Html.DisplayFor(model => model.Education)</h3>
+<h3>@Html.DisplayNameFor(model => model.SkillSet): @Html.DisplayFor(model => model.SkillSet)</h3>
+<h3>@Html.DisplayNameFor(model => model.GitHubLink): @Html.DisplayFor(model => model.GitHubLink)</h3>
+<h3>@Html.DisplayNameFor(model => model.LinkedLink): @Html.DisplayFor(model => model.LinkedLink)</h3>
+<h3>@Html.DisplayNameFor(model => model.AboutMe): @Html.DisplayFor(model => model.AboutMe)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -29,7 +37,6 @@ else
   
 }
 
-<p>@Html.ActionLink("Add a job", "AddJob", new { id = Model.SeekerId })</p>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit Seeker", "Edit", new { id = Model.SeekerId })</p>

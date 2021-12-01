@@ -90,26 +90,6 @@ namespace Gather.Controllers
         }
 
         [Authorize(Roles = "Job")]
-        public ActionResult AddSeekers(int id)
-        {
-            var thisJob = _db.Jobs.FirstOrDefault(Job => Job.JobId == id);
-            ViewBag.SeekerId = new SelectList(_db.Seekers, "SeekerId", "Name");
-            return View(thisJob);
-        }
-
-        [Authorize(Roles = "Job")]
-        [HttpPost]
-        public ActionResult AddSeekers(Job Job, int SeekerId)
-        {
-            if (SeekerId != 0)
-            {
-                _db.JobSeeker.Add(new JobSeeker() { SeekerId = SeekerId, JobId = Job.JobId });
-            }
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        [Authorize(Roles = "Job")]
         public ActionResult Delete(int id)
         {
             var thisJob = _db.Jobs.FirstOrDefault(Job => Job.JobId == id);
@@ -126,14 +106,6 @@ namespace Gather.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Job")]
-        [HttpPost]
-        public ActionResult DeleteSeekers(int joinId)
-        {
-            var joinEntry = _db.JobSeeker.FirstOrDefault(entry => entry.JobSeekerId == joinId);
-            _db.JobSeeker.Remove(joinEntry);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
     }
 }        

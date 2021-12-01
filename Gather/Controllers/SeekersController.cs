@@ -58,7 +58,7 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
 
-    [Authorize(Roles = "Job")]
+    [Authorize(Roles = "Job, Seeker")]
     public ActionResult Details(int id)
     {
       var thisSeeker = _db.Seekers
@@ -68,7 +68,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Seeker")]
+    [Authorize(Roles = "Seeker, Job")]
     public ActionResult Edit(int id)
     {
       var thisSeeker = _db.Seekers.FirstOrDefault(Seeker => Seeker.SeekerId == id);
@@ -76,7 +76,7 @@ namespace Gather.Controllers
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Seeker")]
+    [Authorize(Roles = "Seeker,Job")]
     [HttpPost]
     public ActionResult Edit(Seeker Seeker, int JobId)
     {
