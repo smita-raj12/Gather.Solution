@@ -1,22 +1,24 @@
 # Gather.io
 
-Pierre wants to create a new application to market his sweet and savory treats. 
-So this web application is use to built with user authentication and a many-to-many relationship. Here are the some features of the application:
-
-* The application should have user authentication. A user should be able to log in and log out. Only logged in users should have create, update and delete functionality. All users should be able to have read functionality.
-
-* There should be a many-to-many relationship between Treats and Flavors. A treat can have many flavors (such as sweet, savory, spicy, or creamy) and a flavor can have many treats. For instance, the "sweet" flavor could include chocolate croissants, cheesecake, and so on.
-
-* A user should be able to navigate to a splash page that lists all treats and flavors. Users should be able to click on an individual treat or flavor to see all the treats/flavors that belong to it.
-
-* This application has separate roles for admins and logged-in users. Only admins should be able to add, update and delete. There is an order form that only logged-in users can access. A logged-in user should be able to create, read, update and delete their own order.
-
 ## Name of Authors:
 
-   _Smita_
-   _Dylan_
-   _DeAunt'e
-   _Carlos_
+   * _Smita_
+   * _Dylan_
+   * _DeAunt'e
+   * _Carlos_
+
+## Description
+
+_This MVC web application has the following functionality:_
+
+* .
+
+* .
+
+* .
+
+* .
+
 
 ## Technologies used:
 
@@ -86,5 +88,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Contact information:
    
-* Email: smita.raj12@gmail.com, {Dylan EMAIL}, {DeAunt'e EMAIL}, webquiza@gmail.com
+* Email: smita.raj12@gmail.com, dylandamitz@gmail.com, godsofolympus88@gmail.com, webquiza@gmail.com
 

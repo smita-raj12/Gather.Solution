@@ -22,8 +22,8 @@ div#footer
   bottom:0px;
   left:0px;
   width:100%;
-  color:rgb(29, 28, 27);
-  background:rgb(179, 207, 207);
+  color:rgb(230, 124, 19);
+  background:rgb(51, 54, 54);
   padding:8px;
 }
 
@@ -40,11 +40,11 @@ h4
 
 .container
 {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 h3
 {
-  color: coral;
+  color: rgb(14, 13, 13);
   padding-top: 20px;
 }
