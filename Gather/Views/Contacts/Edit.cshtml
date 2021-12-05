@@ -1,0 +1,31 @@
+@model Gather.Models.Contact;
+
+<h2> Edit Contact</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.FirstName)
+  @Html.EditorFor(model => model.FirstName)
+
+  @Html.LabelFor(model => model.LastName)
+  @Html.EditorFor(model => model.LastName)
+
+  @Html.LabelFor(model => model.Email)
+  @Html.EditorFor(model => model.Email)
+
+  @Html.LabelFor(model => model.CompanyName)
+  @Html.EditorFor(model => model.CompanyName)
+
+@Html.LabelFor(model => model.Location)
+  @Html.EditorFor(model => model.Location)
+
+  @Html.LabelFor(model => model.Department)
+  @Html.EditorFor(model => model.Department)
+
+
+
+
+  <input type="submit" value="Add new Contact" class="btn btn-default" />
+}
+
+<p>@Html.ActionLink("Home", "Index")</p>
