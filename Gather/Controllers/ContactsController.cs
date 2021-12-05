@@ -1,17 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
 using Gather.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Gather.Controllers
 {
 
   public class ContactsController : Controller
     {
+        [Authorize(Roles = "Seeker, Job")]
         public IActionResult Index()
         {
             //var allContacts = Contact.GetAll();
             return View();
         }
-       
+        [Authorize(Roles = "Seeker, Job")]
         public IActionResult Search(string companyName, string location)
         {
                 var searchContacts = Contact.SearchContact(companyName, location);

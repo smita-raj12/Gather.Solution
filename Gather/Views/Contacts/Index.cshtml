@@ -1,24 +1,4 @@
 @using Gather.Models
-@* <h1>All Contacts:</h1>
-
-
- <ol>
-@foreach (Contact contact in Model)
-{
-    <ul>
-        <li>First Name: @contact.FirstName</li>
-        <li>Last Name: @contact.LastName</li>
-        <li>Email: @contact.Email</li>
-        <li>Company Name: @contact.CompanyName</li>
-    </ul>
-    <a href="/Contacts/Details/@(contact.ContactId)"><p>View Details</p></a>
-    <br>
-}
-</ol>
-
-
-<p>@Html.ActionLink("Create a new contact", "Create")</p> *@
-
 @using (Html.BeginForm("Search", "Contacts"))
   {
     <p>
@@ -27,3 +7,7 @@
         <input type="submit" value="Search" />
     </p>
   }
+  
+@{
+  Layout = "_Layout";
+}
