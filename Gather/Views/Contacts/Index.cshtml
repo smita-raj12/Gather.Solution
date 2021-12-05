@@ -1,13 +1,16 @@
 @using Gather.Models
 @using (Html.BeginForm("Search", "Contacts"))
   {
-    <p>
+    <div class= "container">
+      <p>
         Find contact by company website: @Html.TextBox("companyName")  
         Find contact by location: @Html.TextBox("location") 
         <input type="submit" value="Search" />
-    </p>
-  }
+      </p>
+    </div>
   
+  }
+
 @{
   Layout = "_Layout";
 }

@@ -11,20 +11,21 @@ body,html
   padding: 0;
   font-family: 'El Messiri', sans-serif;
   color: black;
-  text-shadow: 0.8px 0px rgb(255, 232, 181);
+  /* text-shadow: 0.8px 0px rgb(255, 232, 181); */
   font-weight: bold;
   text-align: center;
 }
 
 div#footer 
 {
-  position:fixed;
+  position: fixed;
   bottom:0px;
   left:0px;
   width:100%;
-  color:rgb(230, 19, 19);
   background:rgb(51, 54, 54);
   padding:0px;
+  color: white;
+  text-align: right;
 }
 
 h1
@@ -52,4 +53,29 @@ h3
 div#container
 { 
   padding-top: 10px;
+  
+}
+
+img
+{
+  width: 5%;
+  height: 0%;
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+}
+
+.card-img-top
+{
+  border-radius: 50px;
+  background-color: rgb(145, 139, 139);
+}
+
+.card
+{
+  border-radius: 50px;
+  background-color: rgb(145, 139, 139);
+  border: 10px solid rgb(59, 58, 58);
 }

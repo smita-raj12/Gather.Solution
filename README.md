@@ -2,23 +2,28 @@
 
 ## Name of Authors:
 
-   * _Smita_
-   * _Dylan_
-   * _DeAunt'e
-   * _Carlos_
+   * _Smita Rajpurohit_
+   * _Dylan Allison-Damitz_
+   * _DeAunt'e Hall_
+   * _Carlos Urquiza_
 
 ## Description
 
 _This MVC web application has the following functionality:_
 
-* .
+* A user registered as a Job seeker they can view jobs.
+
+* A user registered as a Job seeker can search employer contacts with ContactFinderAPI.
+
+* A user registered as a Recruiter can add and delete jobs.
+
+* A user registered as a Recruiter can view Job seeker information.
 
 * .
 
 * .
 
 * .
-
 
 ## Technologies used:
 
@@ -34,6 +39,8 @@ _This MVC web application has the following functionality:_
 
 * ASP .NET CORE MVC
 
+* Entity Framework Core
+
 * My SQL Designer
 
 * Identity
@@ -41,6 +48,8 @@ _This MVC web application has the following functionality:_
 * Bootstrap
 
 * Razor View Engine
+
+* RESTful routing
 
 
 ## Setup/Installation Requirements
@@ -65,9 +74,9 @@ Run `dotnet restore` in the git BASH terminal to install dependencies.
 
 6. Run  `dotnet ef database update`
 
-6. Run `dotnet build` in the git BASH terminal to build, and run the project in the terminal. $ dotnet watch run
+7. Run `dotnet build` in the git BASH terminal to build, and run the project in the terminal. $ dotnet watch run
 
-7. View the website by visiting localhost:5000/ in a new web browser( such as google chrome) tab!
+8. View the website by visiting localhost:5000/ in a new web browser tab (such as google chrome)
 
 
 ## Known bugs
