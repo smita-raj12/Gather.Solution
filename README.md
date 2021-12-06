@@ -11,19 +11,13 @@
 
 _This MVC web application has the following functionality:_
 
-* A user registered as a Job seeker they can view jobs.
+* A user registered as a Job seeker can view jobs.
 
-* A user registered as a Job seeker can search employer contacts with ContactFinderAPI.
+* A user registered as a Job seeker can search employer contacts via built-in ContactFinderAPI.
 
 * A user registered as a Recruiter can add and delete jobs.
 
 * A user registered as a Recruiter can view Job seeker information.
-
-* .
-
-* .
-
-* .
 
 ## Technologies used:
 
@@ -61,7 +55,7 @@ _This MVC web application has the following functionality:_
 3. Open git BASH terminal and navigate to the Gather folder, within the directory
 Run `dotnet restore` in the git BASH terminal to install dependencies. 
 
-4. Create appsettings.json file in the Gather directory of Gather.Solution (run the command touch appsettings.json) and add the following code to the file: appsettings.json
+4. Create appsettings.json file in the Gather directory of Gather (run the command touch appsettings.json) and add the following code to the file: appsettings.json
 
       
         {                                                    

@@ -4,12 +4,12 @@
 
 @model Gather.Models.Job
 
-<h2>Job Details</h2>
+<h2><b>Job Details</b></h2>
 <hr />
 
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
-<h3>@Html.DisplayNameFor(model => model.PostDate): @Html.DisplayFor(model => model.PostDate)</h3>
+<h3><b>@Html.DisplayNameFor(model => model.Name)</b>: @Html.DisplayFor(model => model.Name)</h3>
+<h3><b>@Html.DisplayNameFor(model => model.Description)</b>: @Html.DisplayFor(model => model.Description)</h3>
+<h3><b>@Html.DisplayNameFor(model => model.PostDate)</b>: @Html.DisplayFor(model => model.PostDate)</h3>
 
 @if(@Model.JoinEntities.Count == 0)
 {

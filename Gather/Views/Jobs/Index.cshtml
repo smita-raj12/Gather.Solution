@@ -5,7 +5,7 @@
 @using Gather.Models;
 @model IEnumerable<Gather.Models.Job>
 
-<h1>Hello !</h1>
+<h1>Hello, @User.Identity.Name</h1>
 
 @if (Model.Any())
 {
