@@ -11,25 +11,7 @@
 <h3><b>@Html.DisplayNameFor(model => model.Description)</b>: @Html.DisplayFor(model => model.Description)</h3>
 <h3><b>@Html.DisplayNameFor(model => model.PostDate)</b>: @Html.DisplayFor(model => model.PostDate)</h3>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This Job does not contains any details</p>
-}
-else
-{
-  <h4>JobSeekers for this Job:</h4>
-  
-  @foreach(var join in Model.JoinEntities)
-  {
-    <p>@join.Seeker.Name</p>
-    @using (Html.BeginForm("DeleteJob", "Job"))
-    {
-      @Html.Hidden("joinId", @join.JobSeekerId)
-      <input type="submit" value="Delete"/>
-    }
-  }
-  
-}
+
 
 <p>@Html.ActionLink("Apply for job", "Create" , "Seekers" )</p>
 
