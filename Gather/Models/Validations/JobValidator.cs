@@ -12,12 +12,13 @@ namespace Gather.MVC.Validator
     public JobValidator()
     {
       RuleFor(name => name.Name).NotNull().WithMessage("required")
-                                .NotEqual(name => name.Name);
+                                .NotEqual(name => name.Name).Length(0, 50);
                                 
       RuleFor(name=> name.Description).NotNull().WithMessage("required") 
                                       .NotEqual(name => name.Description);
+
       RuleFor(name=> name.PostDate).NotNull().WithMessage("required").GreaterThanOrEqualTo(r => r.PostDate)
-                                    .WithMessage("Date To must be after Date From");   
+                                  .WithMessage("Date To must be after Date From");   
     }
   }
   
