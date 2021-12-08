@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Gather.Models;
 using Microsoft.AspNetCore.Identity;
+using FluentValidation.AspNetCore;
+using Gather.MVC.Validator;
 
 namespace Gather
 {
@@ -23,8 +25,13 @@ namespace Gather
 
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddMvc();
-
+       services.AddControllersWithViews()
+                    .AddFluentValidation(option => {
+                        option.RegisterValidatorsFromAssemblyContaining(typeof(Startup));
+                        option.DisableDataAnnotationsValidation = true;
+                    });
+      
+  
       services.AddEntityFrameworkMySql()
         .AddDbContext<GatherContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));

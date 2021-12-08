@@ -48,6 +48,10 @@ namespace Gather.Controllers
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var currentUser = await _userManager.FindByIdAsync(userId);
             Job.User = currentUser;
+            if (!ModelState.IsValid)
+            {
+               return View();
+            }
             _db.Jobs.Add (Job);
             _db.SaveChanges();
             if (SeekerId != 0)
