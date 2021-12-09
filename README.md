@@ -69,19 +69,21 @@ Run `dotnet restore` in the git BASH terminal to install dependencies.
           }                                                                                
         }                                                                               
 
+5. For the API need to add the "ContactFinder" directory to another ContactFinder.solution folder. And create appsettings.json on ContactFinder add the follwing code.
 
         {                                                    
          "ConnectionStrings":{                                                          
             "DefaultConnection": "Server=localhost;Port=3306;database=contacts;uid={YOUR-USER-NAME};pwd= {YOUR-PASSWORD};"                                        
           }                                                                                
-        }                                           
-5. Remove the {YOUR_USERNAME_NAME} and {YOUR_PASSWORD} and fill in the the code snippet with your username for MySQL, and MySQL password Do not include the curly brackets in your code snippet of appsettings.json
+        }   
 
-6. Run  `dotnet ef database update`
+6. Remove the {YOUR_USERNAME_NAME} and {YOUR_PASSWORD} and fill in the the code snippet with your username for MySQL, and MySQL password Do not include the curly brackets in your code snippet of appsettings.json.                                       
+  
+7. Run  `dotnet ef database update`
 
-7. Run `dotnet build` in the git BASH terminal to build, and run the project in the terminal. $ dotnet watch run
+8. Run `dotnet build` in the git BASH terminal to build, and run the project in the terminal. $ dotnet watch run
 
-8. View the website by visiting localhost:5000/ in a new web browser tab (such as google chrome)
+9. View the website by visiting localhost:5000/ in a new web browser tab (such as google chrome)
 
 
 ## Known bugs
