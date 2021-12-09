@@ -12,7 +12,7 @@ namespace Gather.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-           migrationBuilder.Sql($"DELETE FROM AspNetRoles WHERE Id = 1");
+            migrationBuilder.Sql($"DELETE FROM AspNetRoles WHERE Id = 1");
             migrationBuilder.Sql($"DELETE FROM AspNetRoles WHERE Id = 2");
         }
     }

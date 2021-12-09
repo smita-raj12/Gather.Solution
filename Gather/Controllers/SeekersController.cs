@@ -48,6 +48,7 @@ namespace Gather.Controllers
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
       Seeker.User = currentUser;
+      
       _db.Seekers.Add (Seeker);
       _db.SaveChanges();
       if (JobId != 0)
@@ -89,15 +90,6 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
 
-    [Authorize(Roles = "Job")]
-    public ActionResult AddJob(int id)
-    {
-      var thisSeeker = _db.Seekers.FirstOrDefault(Seeker => Seeker.SeekerId == id);
-      ViewBag.JobId = new SelectList(_db.Jobs, "JobId", "Name");
-      return View(thisSeeker);
-    }
-
-    
     [Authorize(Roles = "Job")]
     public ActionResult Delete(int id)
     {

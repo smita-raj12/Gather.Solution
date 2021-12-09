@@ -4,30 +4,28 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Gather.Controllers
 {
-
-  public class ContactsController : Controller
+    public class ContactsController : Controller
     {
         [Authorize(Roles = "Seeker, Job")]
         public IActionResult Index()
         {
-            //var allContacts = Contact.GetAll();
             return View();
         }
+
         [Authorize(Roles = "Seeker, Job")]
         public IActionResult Search(string companyName, string location)
         {
-                var searchContacts = Contact.SearchContact(companyName, location);
-                return View(searchContacts);
+            var searchContacts = Contact.SearchContact(companyName, location);
+            return View(searchContacts);
         }
         public IActionResult Details(int id)
         {
             Contact Contact = Contact.GetDetails(id);
             return View(Contact);
-
         }
         public ActionResult Create()
         {
-          return View();
+            return View();
         }
 
         [HttpPost]

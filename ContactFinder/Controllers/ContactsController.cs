@@ -41,11 +41,11 @@ namespace ContactFinder.Controllers
       {
         query = query.Where(entry => entry.CompanyName == companyName);
       }
-       if (location != null)
+      if (location != null)
       {
         query = query.Where(entry => entry.Location == location);
       }
-       if (department != null)
+      if (department != null)
       {
         query = query.Where(entry => entry.Department == department);
       }
@@ -100,7 +100,6 @@ namespace ContactFinder.Controllers
           throw;
         }
       }
-
       return NoContent();
     }
 

@@ -11,15 +11,30 @@ namespace Gather.MVC.Validator
   {
     public JobValidator()
     {
+      
       RuleFor(name => name.Name).NotNull().WithMessage("required")
-                                .NotEqual(name => name.Name).Length(0, 50);
-                                
-      RuleFor(name=> name.Description).NotNull().WithMessage("required") 
-                                      .NotEqual(name => name.Description);
+                                .Length(5, 100);
 
-      RuleFor(name=> name.PostDate).NotNull().WithMessage("required").GreaterThanOrEqualTo(r => r.PostDate)
-                                  .WithMessage("Date To must be after Date From");   
+      RuleFor(name=> name.Description).NotEmpty().WithMessage("required")
+                                      .Matches("^[a-z A-Z 0-9]*$").WithMessage("Special Charters not allowed")
+                                      .Length(5, 400);
+                                      
+      RuleFor(name=> name.PostDate).NotNull().WithMessage("required");
+      RuleFor(name=> name.PostDate).Must(Validate_Date)
+                                  .WithMessage("Date To must be after today's date");   
     }
+    private bool Validate_Date(DateTime date)  
+    {  
+        DateTime Current = DateTime.Today;  
+        if ( date>= Current)  
+        {  
+            return true;  
+        }  
+        else  
+        {  
+          return false;  
+        }  
+    }  
   }
   
 }
