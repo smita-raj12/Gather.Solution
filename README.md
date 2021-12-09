@@ -45,6 +45,11 @@ _This MVC web application has the following functionality:_
 
 * RESTful routing
 
+## Preview
+
+![alt text](Capture.png) 
+
+![alt text](Capture2.png)
 
 ## Setup/Installation Requirements
 
@@ -55,7 +60,7 @@ _This MVC web application has the following functionality:_
 3. Open git BASH terminal and navigate to the Gather folder, within the directory
 Run `dotnet restore` in the git BASH terminal to install dependencies. 
 
-4. Create appsettings.json file in the Gather directory of Gather (run the command touch appsettings.json) and add the following code to the file: appsettings.json
+4. Create appsettings.json file in the Gather directory of Gather (run the command touch appsettings.json) and add the following code to the file: appsettings.json and create appsettings.json on ContactFinder add the follwing contacts database.
 
       
         {                                                    
@@ -64,6 +69,12 @@ Run `dotnet restore` in the git BASH terminal to install dependencies.
           }                                                                                
         }                                                                               
 
+
+        {                                                    
+         "ConnectionStrings":{                                                          
+            "DefaultConnection": "Server=localhost;Port=3306;database=contacts;uid={YOUR-USER-NAME};pwd= {YOUR-PASSWORD};"                                        
+          }                                                                                
+        }                                           
 5. Remove the {YOUR_USERNAME_NAME} and {YOUR_PASSWORD} and fill in the the code snippet with your username for MySQL, and MySQL password Do not include the curly brackets in your code snippet of appsettings.json
 
 6. Run  `dotnet ef database update`
