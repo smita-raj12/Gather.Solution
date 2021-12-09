@@ -45,6 +45,8 @@ _This MVC web application has the following functionality:_
 
 * RESTful routing
 
+* Fluent Validation
+
 ## Preview
 
 ![alt text](Capture.png) 
