@@ -90,14 +90,14 @@ namespace Gather.Controllers
       return RedirectToAction("Index");
     }
 
-    [Authorize(Roles = "Job")]
+    [Authorize(Roles = "Job, Seeker ")]
     public ActionResult Delete(int id)
     {
       var thisSeeker = _db.Seekers.FirstOrDefault(Seeker => Seeker.SeekerId == id);
       return View(thisSeeker);
     }
 
-    [Authorize(Roles = "Job")]
+    [Authorize(Roles = "Job, Seeker")]
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {

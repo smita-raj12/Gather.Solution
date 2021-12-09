@@ -26,7 +26,7 @@ namespace Gather.MVC.Validator
     private bool Validate_Date(DateTime date)  
     {  
         DateTime Current = DateTime.Today;  
-        if ( date>= Current)  
+        if (date>= Current)  
         {  
             return true;  
         }  
