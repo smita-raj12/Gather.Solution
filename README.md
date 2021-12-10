@@ -85,7 +85,7 @@ Run `dotnet restore` in the git BASH terminal to install dependencies.
 
 8. Run `dotnet build` in the git BASH terminal to build, and run the project in the terminal. $ dotnet watch run
 
-9. View the website by visiting localhost:5000/ in a new web browser tab (such as google chrome)
+9. View the website by visiting localhost:5003/ in a new web browser tab (such as google chrome)
 
 
 ## Known bugs
