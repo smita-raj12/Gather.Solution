@@ -106,7 +106,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Contact information:
    
-* Email: smita.raj12@gmail.com, 
+* smita.raj12@gmail.com, 
 * dylandamitz@gmail.com, 
 * godsofolympus88@gmail.com, 
 * webquiza@gmail.com
